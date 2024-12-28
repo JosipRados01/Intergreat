@@ -1,0 +1,70 @@
+---
+import "../styles/global.css";
+---
+
+<style>
+  #heroSection {
+    position: relative;
+	display: flex;
+	min-height: 100vh;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+    height: 100vh;
+	background-image: url('../assets/world-map.png');
+	background-attachment: fixed;
+	background-size: cover;
+	background-position: center;
+  }
+  .content {
+    text-align: center;
+  }
+
+  h1 {
+    font-size: 4rem;
+  }
+  p {
+    font-size: 1.5rem;
+  }
+  #heroTransition {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 150px;
+	background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, var(--bg-light) 100%);
+  }
+  .fade-in-up {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+  .visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    });
+
+    document.querySelectorAll('.observe').forEach(el => observer.observe(el));
+  });
+</script>
+
+<div id="heroSection">
+  <div class="content observe fade-in-up">
+    <h1>Intergreat</h1>
+    <p>Your gateway to the stars</p>
+  </div>
+
+  <div id="heroTransition">
+  </div>
+</div>
