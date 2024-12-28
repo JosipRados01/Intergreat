@@ -6,6 +6,10 @@ import "../styles/global.css";
     .image-for-background {
         position: relative;
         min-height: 60vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
     .background-image {
         position: absolute;
@@ -13,14 +17,42 @@ import "../styles/global.css";
         left: 0;
         width: 100%;
         height: 100%;
-        background: url('https://intergreat-center.com/wp-content/uploads/2023/08/IMG-20220802-WA0010-900x682.jpg') center center/cover no-repeat;
-        filter: brightness(0.5);
+        background: url("https://intergreat-center.com/wp-content/uploads/2023/08/IMG-20220802-WA0010-900x682.jpg")
+            center center/cover no-repeat;
+        filter: url(#blue-wash) brightness(0.2);
         z-index: -1;
     }
+    h2 {
+        max-width: 1020px;
+        padding: 0.5rem 2rem;
+        margin: 1rem auto;
+    }
+    p {
+        max-width: 1020px;
+        padding: 0.5rem 2rem;
+        margin: 1rem auto;
+    }
+
+    @media (max-width: 600px) {
+        .image-for-background {
+            min-height: 110vh;
+        }
+    }
+
 </style>
 
-<div class="image-for-background">
+<div class="image-for-background ">
     <div class="background-image"></div>
+    <svg style="display: none;">
+        <filter id="blue-wash" color-interpolation-filters="sRGB">
+          <feColorMatrix 
+            type="matrix" 
+            values="0.2 0.2 0.2 0 0 
+                    0.3 0.3 0.3 0 0 
+                    1 1 1 0 0 
+                    0 0 0 1 0" />
+        </filter>
+      </svg>
     <h2 class="accent-light">
         Daily Integration Center for Travellers Through the Balkans
     </h2>

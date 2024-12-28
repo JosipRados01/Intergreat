@@ -3,24 +3,30 @@ import "../styles/global.css";
 ---
 
 <style>
+    section {
+        padding-top: 15rem;
+    }
     .section {
         display: flex;
         align-items: center;
-        margin: 2rem 0;
+        margin: 6rem 0;
     }
     .section:nth-child(even) {
         flex-direction: row-reverse;
     }
-    .section img {
+    .section figure {
         width: 50%;
         height: auto;
+        border: 1px solid transparent;
+        border-radius: 8px;
+        overflow: hidden;
+    }
+
+    figure {
+        margin: 1rem;
     }
     .section .text {
         width: 50%;
-        padding: 1rem;
-    }
-    figure {
-        margin: 2rem;
     }
 
     @media (max-width: 600px) {
@@ -30,62 +36,69 @@ import "../styles/global.css";
         .section:nth-child(even) {
             flex-direction: column;
         }
-        .section img,
+        .section figure,
         .section .text {
             width: 100%;
         }
     }
 </style>
 
-<section>
+<section class="pageWidth">
+    <div>
+        <div class="text">
+            <h2>What is intergreat?</h2>
+            <p>
+                The Daily Integration Center for Travellers Through the Balkans
+                is a resource integration centre for asylum seekers and people
+                travelling through the Balkan route in Bosnia and Herzegovina.
+                Intergreat provides urgent help for people outside reception
+                centres as well as long term and systematic assistance through
+                an integration program.
+            </p>
+        </div>
 
-<div>
-    <div class="text">
-        <h2>What is intergreat?</h2>
-        <p>
-            The Daily Integration Center for Travellers Through the Balkans is
-            a resource integration centre for asylum seekers and people
-            travelling through the Balkan route in Bosnia and Herzegovina.
-            Intergreat provides urgent help for people outside reception centres
-            as well as long term and systematic assistance through an integration
-            program.
-        </p>
+        <div class="section">
+            <figure>
+                <img src="/src/assets/mission.png" alt="Our mission" />
+            </figure>
+            <div class="text">
+                <h2>Our mission</h2>
+                <p>
+                    Establishment of a resource integration centre for asylum
+                    seekers in Bosnia and Herzegovina and providing direct and
+                    systematic assistance in first response activities,
+                    education and economic integration and social inclusion.
+                </p>
+            </div>
+        </div>
+
+        <div class="section">
+            <figure>
+                <img src="/src/assets/vision.jpg" alt="Our vision" />
+            </figure>
+            <div class="text">
+                <h2>Our vision</h2>
+                <p>
+                    Through intensive and individual support to provide
+                    assistance to persons affected by migration and to provide
+                    the possibility of better support in the asylum and legal
+                    status process in BiH
+                </p>
+            </div>
+        </div>
+
+        <div class="section">
+            <figure>
+                <img src="/src/assets/values.jpg" alt="Our values" />
+            </figure>
+            <div class="text">
+                <h2>Our values</h2>
+                <p>
+                    Solidarity and support for people on the move respecting
+                    individual needs and stronger positions of vulnerable
+                    categories in society
+                </p>
+            </div>
+        </div>
     </div>
-
-<div class="section">
-    <figure><img src="/src/assets/mission.png" alt="Our mission" /></figure>
-    <div class="text">
-        <h2>Our mission</h2>
-        <p>
-            Establishment of a resource integration centre for asylum seekers in
-            Bosnia and Herzegovina and providing direct and systematic
-            assistance in first response activities, education and economic
-            integration and social inclusion.
-        </p>
-    </div>
-</div>
-
-<div class="section">
-    <figure><img src="/src/assets/vision.jpg" alt="Our vision" /></figure>
-    <div class="text">
-        <h2>Our vision</h2>
-        <p>
-            Through intensive and individual support to provide assistance to
-            persons affected by migration and to provide the possibility of
-            better support in the asylum and legal status process in BiH
-        </p>
-    </div>
-</div>
-
-<div class="section">
-    <figure><img src="/src/assets/values.jpg" alt="Our values" /></figure>
-    <div class="text">
-        <h2>Our values</h2>
-        <p>
-            Solidarity and support for people on the move respecting individual
-            needs and stronger positions of vulnerable categories in society
-        </p>
-    </div>
-</div>
-
 </section>

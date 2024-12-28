@@ -20,25 +20,25 @@ const longTermCards = [
         heading:
             "Language Learning: Offering Bosnian and English language classes",
         description:
-            "INTERGreat offer Bosnian and English language classes to asylum seekers and migrants. We understand that learning the language of the country in which they are living is crucial for successful integration into society.   Our language classes go beyond just teaching language skills; they also provide valuable insight into the local culture and customs, allowing",
+            "INTERGreat offers Bosnian and English language classes to help asylum seekers and migrants integrate into their new communities. These classes provide essential language skills alongside cultural insights to ease their transition.",
     },
     {
         icon: "https://intergreat-center.com/wp-content/uploads/2023/06/DSCF1087-1024x683.jpg",
         heading: "Skill Training & Job Market Preparation",
         description:
-            "We offer skill training and workshops to help refugees and asylum seekers acquire the necessary skills for the job market. We also provide support with job searching and preparation for job interviews.",
+            "We provide skill-building workshops to equip refugees and asylum seekers with tools needed to navigate the job market. From training programs to personalized guidance, we help individuals prepare for interviews and secure employment opportunities.",
     },
     {
         icon: "https://intergreat-center.com/wp-content/uploads/2023/06/Intergreat.jpg",
         heading: "Social Entrepreneurship & Employment:",
         description:
-            "We encourage and support social entrepreneurship, helping refugees and asylum seekers create their own businesses and become self-sufficient. We also work with local employers to provide employment opportunities to our beneficiaries.",
+            "Our programs encourage social entrepreneurship, empowering refugees and asylum seekers to start businesses and become independent. We also partner with local employers to connect them with job opportunities.",
     },
     {
         icon: "https://intergreat-center.com/wp-content/uploads/2023/06/untitled-8-1024x683.jpg",
         heading: "Product & Service Support",
         description:
-            "We support the development of small businesses by assisting with the production and marketing of products and services.",
+            "To support small business development, we assist in refining products and services while offering guidance on effective marketing strategies. Our goal is to help these ventures thrive in competitive markets.",
     },
 ];
 
@@ -46,6 +46,17 @@ import "../styles/global.css";
 ---
 
 <style>
+    .topPadding {
+        padding-top: 4rem;
+    }
+    section {
+        padding-top: 6rem;
+    }
+
+    .cardsSection {
+        background-color: var(--bg-dark);
+    }
+
     .cards-container {
         display: flex;
         flex-wrap: wrap;
@@ -62,6 +73,7 @@ import "../styles/global.css";
         border-radius: 8px;
         width: 150px;
         text-align: center;
+        background-color: var(--bg-light);
     }
     .icon {
         padding: 1rem;
@@ -88,7 +100,6 @@ import "../styles/global.css";
     button:hover {
         background-color: #0056b3;
     }
-
     .long-term-card {
         display: flex;
         flex-direction: column;
@@ -99,16 +110,24 @@ import "../styles/global.css";
         border-radius: 8px;
         width: 100%;
         max-width: 400px;
-        text-align: center;
+        background-color: var(--bg-light);
     }
     .long-term-card .icon {
-        padding: 1rem;
+        aspect-ratio: 16 / 9;
+        overflow: hidden;
+        border: transparent solid 1px;
+        border-radius: 8px;
+        padding: 0;
+        margin: 1rem;
     }
-    .long-term-card .heading {
+    .long-term-card h4 {
         margin-top: 0.5rem;
+        width: 100%;
+        padding-inline: 1rem;
     }
     .long-term-card p {
         margin-top: 0.5rem;
+        margin-inline: 1rem;
     }
     @media (max-width: 600px) {
         .long-term-card {
@@ -140,74 +159,78 @@ import "../styles/global.css";
         }
     }
 </style>
-
-<section>
-    <h2>Our activities</h2>
-    <p>
-        We provide a range of services to help people on the move. Here are some
-        of the activities we offer:
-    </p>
-    <section>
-        <h3>First response activities</h3>
-        <div class="cards-container">
-            {
-                cards.map((card) => (
-                    <div class="card">
-                        <div class="icon">
-                            <img src={card.icon} alt={card.heading} />
-                        </div>
-                        <div class="heading">{card.heading} </div>
-                    </div>
-                ))
-            }
-        </div>
-        <div class="button-container">
-            <button>Learn more</button>
-        </div>
-    </section>
-    <section>
-        <h3>Long-Term Integration</h3>
+<div class="cardsSection">
+    <section class="pageWidth topPadding">
+        <h2>Our activities</h2>
         <p>
-            We provide long-term support to help people integrate into society.
-            Our services include:
+            We provide a range of services to help people on the move. Here are
+            some of the activities we offer:
         </p>
 
-        <div class="cards-container">
-            {
-                longTermCards.map((card) => (
-                    <div class="long-term-card">
-                        <div class="icon">
-                            <img src={card.icon} alt={card.heading} />
+        <section>
+            <h3>First response activities</h3>
+            <div class="cards-container">
+                {
+                    cards.map((card) => (
+                        <div class="card">
+                            <div class="icon">
+                                <img src={card.icon} alt={card.heading} />
+                            </div>
+                            <div class="heading">{card.heading} </div>
                         </div>
-                        <div class="heading">{card.heading} </div>
-                        <p>{card.description}</p>
-                    </div>
-                ))
-            }
-        </div>
-        <div class="button-container">
-            <button>Learn more</button>
-        </div>
-    </section>
-
-    <section class="integration-section">
-        <div>
-            <img
-                src="https://intergreat-center.com/wp-content/uploads/2023/06/Intergreat.jpg"
-                alt="Our vision"
-            />
-        </div>
-        <div>
-            <h3>Cultural and social integration</h3>
-            <p>
-                Cultural and social integration is a vital part of our long-term
-                integration program for asylum seekers and refugees. We believe
-                that by promoting cultural exchange and social inclusion, we can
-                help individuals and communities thrive.
-            </p>
+                    ))
+                }
+            </div>
             <div class="button-container">
                 <button>Learn more</button>
             </div>
-        </div>
+        </section>
+
+        <section>
+            <h3>Long-Term Integration</h3>
+            <p>
+                We provide long-term support to help people integrate into
+                society. Our services include:
+            </p>
+
+            <div class="cards-container">
+                {
+                    longTermCards.map((card) => (
+                        <div class="long-term-card">
+                            <div class="icon">
+                                <img src={card.icon} alt={card.heading} />
+                            </div>
+                            <h4>{card.heading}</h4>
+                            <p>{card.description}</p>
+                        </div>
+                    ))
+                }
+            </div>
+            <div class="button-container">
+                <button>Learn more</button>
+            </div>
+        </section>
+
+        <section class="integration-section">
+            <div>
+                <img
+                    src="https://intergreat-center.com/wp-content/uploads/2023/06/Intergreat.jpg"
+                    alt="Our vision"
+                />
+            </div>
+            <div>
+                <h3>Cultural and social integration</h3>
+                <p>
+                    Cultural and social integration is a vital part of our
+                    long-term integration program for asylum seekers and
+                    refugees. We believe that by promoting cultural exchange and
+                    social inclusion, we can help individuals and communities
+                    thrive.
+                </p>
+                <div class="button-container">
+                    <button>Learn more</button>
+                </div>
+            </div>
+        </section>
     </section>
-</section>
+</div>
