@@ -142,7 +142,6 @@ import "../styles/global.css";
         margin-top: 2rem;
     }
     .integration-section img {
-        max-width: 100%;
         border-radius: 8px;
     }
     .integration-section div {
@@ -153,21 +152,22 @@ import "../styles/global.css";
             flex-direction: row;
             align-items: flex-start;
         }
-        .integration-section img {
-            max-width: 50%;
-            margin-right: 1rem;
+        .integration-section .text {
+            width: 40%;
+            min-width: 300px;
+            height: auto;
         }
     }
 </style>
 <div class="cardsSection">
     <section class="pageWidth topPadding">
-        <h2>Our activities</h2>
-        <p>
+        <h2 class="fade-in-up observe">Our activities</h2>
+        <p class="fade-in-up observe">
             We provide a range of services to help people on the move. Here are
             some of the activities we offer:
         </p>
 
-        <section>
+        <section class="fade-in-up observe">
             <h3>First response activities</h3>
             <div class="cards-container">
                 {
@@ -196,7 +196,7 @@ import "../styles/global.css";
             <div class="cards-container">
                 {
                     longTermCards.map((card) => (
-                        <div class="long-term-card">
+                        <div class="long-term-card fade-in-up observe">
                             <div class="icon">
                                 <img src={card.icon} alt={card.heading} />
                             </div>
@@ -212,13 +212,13 @@ import "../styles/global.css";
         </section>
 
         <section class="integration-section">
-            <div>
+            <div class="image-container">
                 <img
                     src="https://intergreat-center.com/wp-content/uploads/2023/06/Intergreat.jpg"
                     alt="Our vision"
                 />
             </div>
-            <div>
+            <div class="text">
                 <h3>Cultural and social integration</h3>
                 <p>
                     Cultural and social integration is a vital part of our
